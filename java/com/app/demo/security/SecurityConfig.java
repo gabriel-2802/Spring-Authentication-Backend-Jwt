@@ -34,9 +34,6 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/**").permitAll()
                         .requestMatchers("/auth/login").permitAll()
-                        .requestMatchers("/test/all").permitAll()
-                        .requestMatchers("test/user").hasAuthority("USER")
-                        .requestMatchers("/test/admin").hasAuthority("ADMIN")
                         .anyRequest().authenticated())
                 .httpBasic(withDefaults())
                 .exceptionHandling(exceptionHandling ->
